@@ -12,7 +12,7 @@
 
         body {
             font-family: 'Inter', -apple-system, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #0a1f0a 0%, #0d2818 50%, #061a12 100%);
             color: #fff;
             min-height: 100vh;
             line-height: 1.7;
@@ -26,14 +26,14 @@
 
         .hero {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .logo {
             font-family: 'JetBrains Mono', monospace;
             font-size: 3rem;
             font-weight: 600;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 50%, #16a34a 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -42,9 +42,40 @@
 
         .tagline {
             font-size: 1.25rem;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.8);
             max-width: 500px;
-            margin: 0 auto;
+            margin: 0 auto 1.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #4ade80;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+        }
+
+        .agent-callout {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .agent-callout h3 {
+            color: #4ade80;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .agent-callout p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
         }
 
         .install-section {
@@ -56,13 +87,13 @@
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: rgba(255,255,255,0.5);
+            color: #4ade80;
             margin-bottom: 1rem;
         }
 
         .install-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 1rem;
@@ -70,8 +101,8 @@
         }
 
         .install-card:hover {
-            background: rgba(255,255,255,0.08);
-            border-color: rgba(255,255,255,0.2);
+            background: rgba(34, 197, 94, 0.05);
+            border-color: rgba(34, 197, 94, 0.2);
         }
 
         .install-label {
@@ -86,7 +117,7 @@
         .install-code {
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.9rem;
-            color: #a5b4fc;
+            color: #4ade80;
             word-break: break-all;
         }
 
@@ -102,13 +133,13 @@
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.85rem;
             padding: 0.75rem 1rem;
-            background: rgba(255,255,255,0.03);
+            background: rgba(255,255,255,0.02);
             border-radius: 8px;
         }
 
         .command-name {
-            color: #a5b4fc;
-            min-width: 140px;
+            color: #4ade80;
+            min-width: 160px;
         }
 
         .command-desc {
@@ -125,6 +156,8 @@
         .feature {
             text-align: center;
             padding: 1.5rem 1rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: 12px;
         }
 
         .feature-icon {
@@ -148,18 +181,18 @@
             justify-content: center;
             gap: 2rem;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255,255,255,0.08);
         }
 
         .links a {
-            color: rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.5);
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.2s;
         }
 
         .links a:hover {
-            color: #fff;
+            color: #4ade80;
         }
 
         @media (max-width: 600px) {
@@ -177,6 +210,12 @@
         <div class="hero">
             <div class="logo">tally</div>
             <p class="tagline">Let AI classify your transactions. LLM-powered spending categorization.</p>
+            <span class="badge">Built for AI Agents</span>
+        </div>
+
+        <div class="agent-callout">
+            <h3>🤖 Designed for AI Assistants</h3>
+            <p>Tally outputs structured JSON for LLMs. Point Claude, GPT, or any AI at your transactions—it understands merchant codes and writes the categorization rules for you.</p>
         </div>
 
         <div class="install-section">
@@ -213,27 +252,27 @@
                 <span class="command-desc">Find uncategorized transactions</span>
             </div>
             <div class="command">
-                <span class="command-name">tally inspect</span>
-                <span class="command-desc">Analyze CSV structure</span>
+                <span class="command-name">tally discover --format json</span>
+                <span class="command-desc">JSON output for AI agents</span>
             </div>
         </div>
 
         <h2>How It Works</h2>
         <div class="features">
             <div class="feature">
+                <div class="feature-icon">💳</div>
+                <h3>Export Statements</h3>
+                <p>Download CSVs from your bank or credit card</p>
+            </div>
+            <div class="feature">
                 <div class="feature-icon">🤖</div>
-                <h3>AI Understands</h3>
-                <p>LLMs know what merchants are from messy bank descriptions</p>
+                <h3>AI Categorizes</h3>
+                <p>LLMs understand messy merchant descriptions</p>
             </div>
             <div class="feature">
-                <div class="feature-icon">💬</div>
-                <h3>You Describe</h3>
-                <p>Tell the AI your rules in plain English</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">⚡</div>
-                <h3>Tally Executes</h3>
-                <p>720 built-in rules plus your custom patterns</p>
+                <div class="feature-icon">📊</div>
+                <h3>Tally Reports</h3>
+                <p>720 built-in rules + your custom patterns</p>
             </div>
         </div>
 
